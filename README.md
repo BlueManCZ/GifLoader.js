@@ -21,7 +21,7 @@ Everything is automatic, just create new class instance in HTML `<body>`:
 </script>
 ```
 
-Loader constructor takes two arguments: `new Loader(imageUrl, autoHide)`.
+Loader constructor takes two arguments: `new Loader(imageUrl, autoHide)`
 
 In the first argument, you can specify your own image. In the second argument,
 you can set if loader should automatically hide when the page is fully loaded.

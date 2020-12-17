@@ -6,6 +6,8 @@ Simple library in pure JavaScript to display an automatic loader component while
 
 Include `loader.css` and `loader.js` files in your HTML:
 
+![Loader](src/images/hex-loader.gif)
+
 ```html
 <link rel="stylesheet" href="src/css/loader.css">
 <script src="src/js/loader.js"></script>

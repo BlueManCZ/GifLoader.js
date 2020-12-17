@@ -2,11 +2,11 @@
 
 Simple library in pure JavaScript to display an automatic loader component while the HTML page is loading.
 
+![Loader](src/images/hex-loader.gif)
+
 ### Usage
 
 Include `loader.css` and `loader.js` files in your HTML:
-
-![Loader](src/images/hex-loader.gif)
 
 ```html
 <link rel="stylesheet" href="src/css/loader.css">

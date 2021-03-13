@@ -1,8 +1,7 @@
 class Loader {
-  constructor(imageSource, autohide) {
-      document.body.classList.add('preload')
-
+  constructor(imageSource, autohide, timeIn = 200) {
       this.loader = document.createElement('div');
+      this.loader.classList.add('loader_hidden');
       this.loader.id = 'loader';
 
       let gif = document.createElement('img');
@@ -11,13 +10,26 @@ class Loader {
 
       this.loader.appendChild(gif);
       document.body.appendChild(this.loader);
+      document.body.classList.add('preload');
 
       if (autohide) {
           window.addEventListener('load', this.hide);
       }
+
+      setTimeout(this._delayedShow, timeIn);
+  }
+  _delayedShow() {
+      if (document.body.classList.contains('preload')) {
+          document.body.classList.add('preload');
+          this.loader.classList.remove('loader_hidden');
+      }
+  }
+  show() {
+      document.body.classList.add('preload');
+      this.loader.classList.remove('loader_hidden');
   }
   hide() {
-    document.body.classList.remove('preload');
-    this.loader.classList.add('loader_hidden');
+      document.body.classList.remove('preload');
+      this.loader.classList.add('loader_hidden');
   }
 }

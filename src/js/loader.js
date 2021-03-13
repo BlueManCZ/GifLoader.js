@@ -18,8 +18,9 @@ class Loader {
 
       if (timeIn) {
           setTimeout(this._delayedShow, timeIn);
+      } else {
+          this.show();
       }
-      this.show();
   }
   _delayedShow() {
       if (document.body.classList.contains('preload')) {

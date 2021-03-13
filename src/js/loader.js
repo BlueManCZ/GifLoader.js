@@ -1,5 +1,5 @@
 class Loader {
-  constructor(imageSource, autohide, timeIn = 200) {
+  constructor(imageSource, autohide, timeIn = 0) {
       this.loader = document.createElement('div');
       this.loader.classList.add('loader_hidden');
       this.loader.id = 'loader';

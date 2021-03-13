@@ -16,7 +16,10 @@ class Loader {
           window.addEventListener('load', this.hide);
       }
 
-      setTimeout(this._delayedShow, timeIn);
+      if (timeIn) {
+          setTimeout(this._delayedShow, timeIn);
+      }
+      this.show();
   }
   _delayedShow() {
       if (document.body.classList.contains('preload')) {

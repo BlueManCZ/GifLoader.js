@@ -49,6 +49,6 @@ And you can disable automatic hiding on page load and hide loader manually:
     // do some work here
     
     // hide loader
-    loader.hide();
+    gifLoader.hide();
 </script>
 ```

@@ -6,36 +6,49 @@ Simple library in pure JavaScript to display an automatic loader component while
 
 ### Usage
 
-Include `loader.css` and `loader.js` files in your HTML:
+Include `GifLoader.css` and `GifLoader.js` files into your HTML:
 
 ```html
-<link rel="stylesheet" href="src/css/loader.css">
-<script src="src/js/loader.js"></script>
+<head>
+    <link rel="stylesheet" href="src/css/GifLoader.css">
+</head>
+
+<body></body>
+
+<script src="src/js/GifLoader.js"></script>
 ```
 
-Everything is automatic, just create new class instance in HTML `<body>`:
+Everything is automatic, just show the GifLoader. It will automatically hide
+when the page is loaded by default. Check [example.html](example.html)
 
 ```html
 <script>
-    new Loader('src/images/hex-loader.gif', true);
+    gifLoader.show();
 </script>
 ```
 
-Loader constructor takes two arguments: `new Loader(imageUrl, autoHide)`
-
-In the first argument, you can specify your own image. In the second argument,
-you can set if loader should automatically hide when the page is fully loaded.
-
-You can hide loader manually:
+You can choose your own gif:
 
 ```html
 <script>
-    // create new instance
-    loader = new Loader('src/images/hex-loader.gif', false);
+    gifLoader.gifSrc = "src/images/sun-loader.gif";
+    gifLoader.show();
+</script>
+```
+
+And you can disable automatic hiding on page load and hide loader manually:
+
+```html
+<script>
+    // disable autoHide
+    gifLoader.autoHide = false;
+    
+    // show loader
+    gifLoader.show();
 
     // do some work here
     
-    // manually hide loader
+    // hide loader
     loader.hide();
 </script>
 ```

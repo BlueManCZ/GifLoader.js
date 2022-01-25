@@ -1,4 +1,4 @@
-class GifLoader {
+export class GifLoader {
     constructor() {
         this.autoHide = true;
         this._element = document.createElement("div");
@@ -14,8 +14,14 @@ class GifLoader {
             this._doAutoHide();
         });
     }
+    get autoHide() {
+        return this._autoHide;
+    }
     set autoHide(state) {
         this._autoHide = state;
+    }
+    get gifSrc() {
+        return this._gifElement.src;
     }
     set gifSrc(src) {
         this._gifElement.src = src;
@@ -29,8 +35,9 @@ class GifLoader {
         this._element.classList.add("loader_hidden");
     }
     _doAutoHide() {
-        if (this._autoHide)
+        if (this.autoHide) {
             this.hide();
+        }
     }
 }
 const gifLoader = new GifLoader();

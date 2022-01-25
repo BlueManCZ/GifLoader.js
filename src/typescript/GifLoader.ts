@@ -1,10 +1,18 @@
-class GifLoader {
+export class GifLoader {
     private _autoHide: boolean;
-    private _element: HTMLElement;
-    private _gifElement: HTMLImageElement;
+    private readonly _element: HTMLElement;
+    private readonly _gifElement: HTMLImageElement;
+
+    get autoHide(): boolean {
+        return this._autoHide;
+    }
 
     set autoHide(state: boolean) {
         this._autoHide = state;
+    }
+
+    get gifSrc(): string {
+        return this._gifElement.src;
     }
 
     set gifSrc(src: string) {
@@ -42,8 +50,9 @@ class GifLoader {
     }
 
     _doAutoHide(): void {
-        if (this._autoHide)
+        if (this.autoHide) {
             this.hide();
+        }
     }
 }
 
